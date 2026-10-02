@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.teal,
         foregroundColor: Colors.white,
         elevation: 0,
-        leading: const Icon(Icons.home_rounded, size: 30),
+        // leading: const Icon(Icons.home_rounded, size: 30),
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
           IconButton(onPressed: () {}, icon: const Icon(Icons.person_outline)),
@@ -21,6 +21,41 @@ class HomePage extends StatelessWidget {
           const SizedBox(width: 8),
         ],
       ),
+
+      drawer: Drawer(
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 74, 106, 114),
+              ),
+              accountName: Text("Name"),
+              accountEmail: Text("email"),
+              currentAccountPicture: Icon(Icons.person),
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("HomePage"),
+              onTap: () {},
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.contact_page),
+              title: Text("Contact"),
+              hoverColor: Colors.blueGrey,
+              onTap: () {},
+            ),
+            Spacer(),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Profile"),
+              onTap: () {},
+            ),
+          ],
+        ),
+      ),
+
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32),
